@@ -9,27 +9,27 @@ To develop a python control code to move the mobilerobot along the predefined pa
 
 ## Procedure
 
-Step1:
+Step1: Initiate the MobileRobot.
 
 <br/>
 
-Step2:
+Step2: Connect your PC with the MobileRobot through Wi-Fi.
 
 <br/>
 
-Step3:
+Step3: Open batter_level.py file and check the battery.
 
 <br/>
 
-Step4:
+Step4: Open the other Python files and Program the movements of the robot using python.
 
 <br/>
 
-Step5:
+Step5: Execute the python program and record the movements.
 
 <br/>
 
-## Program
+## Program :
 ```python
 from robomaster import robot
 import time
@@ -40,9 +40,24 @@ if __name__ == '__main__':
 
     ep_chassis = ep_robot.chassis
 
-    ## Write your code here
+    '''
+    x = x-axis movement distance,( meters) [-5,5]
+    y = y-axis movement distance,( meters) [-5,5]
+    z = rotation about z axis ( degree)[-180,180]
+    xy_speed = xy axis movement speed,( unit meter/second) [0.5,2]
+    '''
+    ep_chassis.move(x=2, y=0, z=0, xy_speed=0.75).wait_for_completed()
+     ep_led.set_led(comp="all",r=255,g=0,b=0,effect="on")   
 
+    ep_chassis.move(x=0, y=0, z=90, xy_speed=1).wait_for_completed()
+    ep_led.set_led(comp="all",r=0,g=255,b=0,effect="on")
 
+    ep_chassis.move(x=2, y=0, z=0, xy_speed=0.75).wait_for_completed()
+    ep_led.set_led(comp="all",r=0,g=0,b=255,effect="on")
+
+    ep_chassis.drive_speed(x=0.5,y=0,z=20)
+    time.sleep(20)
+    ep_chassis.drive_speed(x=0,y=0,z=0)
 
     
     ep_robot.close()
@@ -52,8 +67,8 @@ if __name__ == '__main__':
 
 ![robo](./img/robomaster.png)
 
-Insert image here
-
+Initial Position :![](./img/my1.jpeg)
+Final Position![](./img/final.jpeg)
 
 <br/>
 <br/>
@@ -62,14 +77,11 @@ Insert image here
 
 ## MobileRobot Movement Video:
 
-Upload your video in Youtube and paste your video-id here
-
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+[Click here..](https://youtube.com/shorts/xCajyThrivk?feature=share)
 
 <br/>
 <br/>
-<br/>
-<br/>
+
 
 ## Result:
 Thus the python program code is developed to move the mobilerobot in the predefined path.
