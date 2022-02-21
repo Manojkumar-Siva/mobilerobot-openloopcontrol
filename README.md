@@ -68,7 +68,7 @@ if __name__ == '__main__':
 ![robo](./img/robomaster.png)
 
 Initial Position :![](./img/my1.jpeg)
-Final Position![](./img/final.jpeg)
+Final Position :![](./img/final.png)
 
 <br/>
 <br/>
